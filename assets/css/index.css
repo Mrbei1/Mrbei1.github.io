@@ -1,0 +1,210 @@
+body,html{
+    background:#f4ede3;
+    width:100%;
+    height:100%;
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+a:hover{
+    text-decoration: none;
+}
+ul>li{
+    list-style: none;
+}
+.bodyBox{
+    position: relative;
+    height: 100vh;
+    width:100%;
+    background:#f4ede3;
+}
+    /*雾  start*/
+.fog__container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.fog__img {
+    position: absolute;
+    height: 101%;
+    width: 300%;
+}
+.fog__img--first {
+    background: url("https://wow.techbrood.com/uploads/1811/fog-1.png") repeat-x;
+    background-size: cover;
+    background-position: center;
+    -webkit-animation: marquee 60s linear infinite;
+    animation: marquee 60s linear infinite;
+}
+.fog__img--second {
+    background: url("https://wow.techbrood.com/uploads/1811/fog-2.png") repeat-x;
+    background-size: cover;
+    background-position: center;
+    -webkit-animation: marquee 40s linear infinite;
+    animation: marquee 40s linear infinite;
+}
+@-webkit-keyframes marquee {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(-200vw, 0, 0);
+        transform: translate3d(-200vw, 0, 0);
+    }
+}
+@keyframes marquee {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(-200vw, 0, 0);
+        transform: translate3d(-200vw, 0, 0);
+    }
+}
+    /*雾  start*/
+.header-phone{
+    height:20rem;
+    background-image: url("../img/top.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.aside-left{
+    width: 20%;
+    position: fixed;
+    opacity: 1;
+    transition: all .2s ease-in;
+    height: 100%;
+    z-index: 999;
+    top:0px;
+    background-color: rgba(69,66,58,0.15);
+}
+.aside-mian{
+    margin-top: 280px;
+    height:100%;
+    background-color: rgba(69,66,58,0.05);
+}
+.touxiang-box{
+    text-align: center;
+}
+.touxiang-box .profilepic {
+    display: block;
+    border: 5px solid #d2cbc3;
+    border-radius: 300px;
+    width: 128px;
+    height: 128px;
+    margin: 0 auto;
+    position: relative;
+    top:-64px;
+    overflow: hidden;
+    -webkit-transition: all .2s ease-in;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+}
+.header-author {
+    text-align: center;
+    margin: -35px 0 .67em 0;
+    font-family: Roboto,serif;
+    font-size: 30px;
+    transition: .3s;
+}
+.header-author a{
+    color: #696969;
+}
+a:hover{
+    color: #b0a0aa;
+}
+.touxiang-box img{
+    width: 128px;
+    height: 128px;
+}
+.header-subtitle{
+    color:#999;
+    margin-top:30px;
+}
+.header-menu{
+    margin:30px 0 30px 0px;
+}
+.header-menu a{
+    color:#696969;
+    font-size:14px;
+}
+.header-smart-menu{
+    font-size:12px;
+    color:#666;
+    margin:50px 0px 30px 0px;
+}
+.header-smart-menu a{
+    font-size:12px;
+    color:#666;
+}
+.social a i{
+    font-size:20px;
+}
+.social a{
+    display: inline-block;
+    height:30px;
+    width:30px;
+    color:#666;
+    border-radius: 50%;
+}
+.social .github{
+    background: #7f8698;
+    opacity: 0.8;
+    margin-right:10px;
+}
+.social a i{
+    color:#f1f1f1;
+}
+.social .zhihu{
+    background: #0084ff;
+    opacity: 0.8;
+    margin-right:10px;
+}
+.social .jianshu{
+    background:#ec6f5a;
+    opacity: 0.8;
+}
+.social a:hover{
+    opacity: 1;
+}
+.content-box,.footer-box{
+    padding:0px;
+}
+.content-box-main{
+    width:80%;
+    margin-left:20%;
+    margin-top:-3rem;
+    height:32.8rem;
+    overflow-y:scroll;
+    z-index: 100;
+}
+.content-box-main1,.content-box-main2{
+    margin-left:20px;
+    margin-right:20px;
+    padding:10px 30px;
+    height:100px;
+    margin-bottom: 50px;
+}
+.content-header h1{
+    line-height: 48px;
+}
+.content-header h1 a{
+    color:#999;
+    font-size:20px;
+}
+
+
+
+
+.footer-box{
+    padding-left:20%;
+    text-align: center;
+}
