@@ -27,6 +27,7 @@ ul>li{
     position: absolute;
     height: 100%;
     width: 100%;
+    overflow: hidden;
 }
 .fog__img {
     position: absolute;
@@ -179,6 +180,7 @@ a:hover{
     padding:0px;
 }
 .content-box-main{
+    position: absolute;
     width:80%;
     margin-left:20%;
     margin-top:-3rem;
@@ -187,23 +189,41 @@ a:hover{
     z-index: 100;
 }
 .content-box-main1,.content-box-main2{
-    margin-left:20px;
-    margin-right:20px;
+    margin:20px 20px 20px 20px;
     padding:10px 30px;
-    height:100px;
-    margin-bottom: 50px;
+    background: rgba(10,10,10,0.05);
 }
 .content-header h1{
     line-height: 48px;
 }
 .content-header h1 a{
     color:#999;
-    font-size:20px;
+    font-size:28px;
+    font-weight: 500;
 }
-
-
-
-
+.time{
+    color: #999;
+    font-size: 18px;
+    font-weight: 100;
+    float:right;
+}
+.time i{
+    font-size:20px;
+    margin-right:5px;
+}
+.content-main h1{
+    color:#574c4c;
+    font-size:24px;
+    box-sizing: border-box;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #c7bcaf;
+}
+.content-main-p{
+    text-indent: 2em;
+    font-size:16px;
+    font-size: 1rem;
+    line-height: 28px;
+}
 .footer-box{
     padding-left:20%;
     text-align: center;
