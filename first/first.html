@@ -2,9 +2,103 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <link rel="stylesheet" href="../assets/plugins/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/plugins/icon/iconfont.css">
 </head>
 <body>
-$END$
+
+    <div class="haswifi">
+        <div style="display:flex;align-items:center;"  data_haswifi="'20'">
+            <i class="iconfont icon-WIFIxinhao-wu" style="font-size:28px;margin-right:3px;"></i>
+        </div>
+        <div style="display:flex;align-items:center;" data_haswifi="'99'">
+            <i class="iconfont icon-WIFIxinhao-wu" style="font-size:28px;margin-right:3px;"></i>
+        </div>
+        <div style="display:flex;align-items:center;" data_haswifi="'9'">
+            <i class="iconfont icon-WIFIxinhao-wu" style="font-size:28px;margin-right:3px;"></i>
+        </div>
+        <div style="display:flex;align-items:center;" data_haswifi="'0'">
+            <i class="iconfont icon-WIFIxinhao-wu" style="font-size:28px;margin-right:3px;"></i>
+        </div>
+    </div>
+
+    <div class="hasPower">
+        <div style="display:flex;align-items:center;" hasPower="'3550'">
+            <i class="iconfont icon-iconset0248" style="font-size:28px;margin-right:3px;"></i><span>0%</span>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="../assets/plugins/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            function wifiShow(){
+                for(var i=0;i<$('.haswifi div').length;i++){
+                    var wifiRest = $('.haswifi div').eq(i).attr("data_haswifi").split("'")[1];
+                    //console.log(wifiRest)
+                    //0-31   99没信号
+                    if(wifiRest !=''){
+                        var PercentageWifi = Math.round((Number(wifiRest)/31)*100);
+                        console.log(PercentageWifi)
+                        if(0<=PercentageWifi && PercentageWifi<=25){
+                            $('.haswifi div').eq(i).children('i').addClass('text-danger').removeClass('icon-WIFIxinhao-wu').addClass('icon-WIFIxinhao-ji3');
+                        }else if(25<PercentageWifi && PercentageWifi<=50){
+                            $('.haswifi div').eq(i).children('i').addClass('text-warning').removeClass('icon-WIFIxinhao-wu').addClass('icon-WIFIxinhao-ji2');
+                        }else if(50<PercentageWifi && PercentageWifi<=75){
+                            $('.haswifi div').eq(i).children('i').addClass('text-success').removeClass('icon-WIFIxinhao-wu').addClass('icon-WIFIxinhao-ji1');
+                        }else if(75<PercentageWifi && PercentageWifi<=100) {
+                            $('.haswifi div').eq(i).children('i').addClass('text-success').removeClass('icon-WIFIxinhao-wu').addClass('icon-WIFIxinhao-ji');
+                        }else{
+                            $('.haswifi div').eq(i).children('i').addClass('text-muted');
+                        }
+                    }else{
+                        console.log(wifiRest)
+                        $('.haswifi div').eq(i).children('i').addClass('text-muted');
+                    }
+
+                }
+            }
+            wifiShow()
+
+            function powerShow(){
+                for(var i=0;i<$('.hasPower div').length;i++){
+                    //3000-4200mV   1200  25%  3300
+                    var powerRest = $('.hasPower div').eq(i).attr("hasPower").split("'")[1];
+                    if(powerRest !=''){
+                        var Percentage = Math.round((powerRest-3000)/12);
+                        console.log(Percentage)
+                        if(8<=Percentage && Percentage<=20){
+                            $('.hasPower div').eq(i).children('i').addClass('text-danger');
+                            $('.hasPower div').eq(i).children('span').addClass('text-danger').text(Percentage+'%');
+                        }else if(20<Percentage && Percentage<50){
+                            $('.hasPower div').eq(i).children('i').addClass('text-warning').removeClass('icon-iconset0248').addClass('icon-iconset0249');
+                            $('.hasPower div').eq(i).children('span').addClass('text-warning').text(Percentage+'%');
+                        }else if(50<=Percentage && Percentage<65){
+                            $('.hasPower div').eq(i).children('i').addClass('text-success').removeClass('icon-iconset0248').addClass('icon-iconset0250');
+                            $('.hasPower div').eq(i).children('span').addClass('text-success').text(Percentage+'%');
+                        }else if(65<=Percentage && Percentage<85) {
+                            $('.hasPower div').eq(i).children('i').addClass('text-success').removeClass('icon-iconset0248').addClass('icon-iconset0251');
+                            $('.hasPower div').eq(i).children('span').addClass('text-success').text(Percentage + '%');
+                        }else if(85<=Percentage && Percentage<=100){
+                            $('.hasPower div').eq(i).children('i').addClass('text-success').removeClass('icon-iconset0248').addClass('icon-iconset0252');
+                            $('.hasPower div').eq(i).children('span').addClass('text-success').text(Percentage+'%');
+                        }else{
+                            $('.hasPower div').eq(i).children('i').addClass('text-muted');
+                            $('.hasPower div').eq(i).children('span').addClass('text-muted').text('0%');
+                        }
+                    }else{
+                        $('.hasPower div').eq(i).children('i').addClass('text-muted');
+                        $('.hasPower div').eq(i).children('span').addClass('text-muted').text('0%');
+                    }
+                }
+
+            }
+            powerShow()
+
+        })
+
+    </script>
 </body>
 </html>
